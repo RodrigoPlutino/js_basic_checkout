@@ -1,0 +1,13 @@
+.container {
+  max-width: 960px;
+}
+
+.lh-condensed { line-height: 1.25; }
+
+.sell-generator {
+  border-radius: solid 10px;
+  text-align: center;
+  margin: 0px 150px;
+  padding: 45px;
+  border: solid 10px;
+}
