@@ -7,6 +7,7 @@
     <title>Checkout example · Bootstrap v4.6</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="form-validation.css">
+    
 
     <style>
       .bd-placeholder-img {
@@ -31,7 +32,8 @@
 
     <label for="articulo">Producto</label>
     <select class="custom-select d-block w-100" id="articulo" required>
-      <option value="">Fernet</option>
+      <option> </option>
+      <option>Fernet</option>
       <option>Vodka</option>
     </select>
 
@@ -64,33 +66,14 @@
             <span class="badge badge-secondary badge-pill">3</span>
           </h4>
           <ul id="cart-list" class="list-group mb-3">
-            <li id="product-price" class="list-group-item d-flex justify-content-between lh-condensed">
-              <div id="product-name">
-              <!-- Acá se ingresa el Nombre de producto desde JS -->
-              <!-- Acá se ingresa la Descripcion de producto desde JS -->              
-              </div>
-              <!-- Acá se ingresa el Precio de producto desde JS -->
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
-              </div>
-              <span class="text-success">-$5</span>
+
+          </ul>
+
+          <ul id="cart-list2" class="list-group mb-3">
+
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total</span>
+              <strong id="monto-total" ></strong>
             </li>
 
           </ul>
@@ -262,6 +245,8 @@
         </ul>
       </footer>
     </div>
+
+
     
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -24,8 +24,11 @@ var listaArticulos = [];
 
 var listaPrecio = [];
 
+var sumaListaPrecio = 0;
 
-document.getElementById("agregar").onclick = agregar;
+
+
+$ ("#agregar").click (agregar);
 
 function agregar() {
 
@@ -40,7 +43,7 @@ function agregar() {
 }
 
 
-document.getElementById("sumar_productos").onclick = sumar_productos;
+$ ("#sumar_productos").click (sumar_productos);
 
 function sumar_productos(){
   var total = 0;
@@ -49,33 +52,44 @@ function sumar_productos(){
 
 console.log(total);
 
-const total_price = document.createElement("li");
-total_price.setAttribute("id", "total-price");
-total_price.classList.add('list-group-item', 'd-flex', 'justify-content-between');
-document.getElementById("cart-list").appendChild(total_price);
 
-const parrafo = document.createElement("strong");
-parrafo.innerHTML = "Total: $" + total;
-document.getElementById("total-price").appendChild(parrafo);
+
+for (var i=0; i < listaPrecio.length; i++) {
+  sumaListaPrecio += listaPrecio[i];
+}
+
+$("#monto-total").text('$' + sumaListaPrecio);
+
+
 
 for (var i = 0; i < listaPrecio.length; i++){
-  
+
+    var ship_box = document.createElement("li");
+    ship_box.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'lh-condensed');
+    $("#cart-list").append(ship_box);
+
+    var ship_data = document.createElement("div");
+    ship_data.setAttribute("id", "product-price");
+    ship_data.classList.add('text-muted');
+    $ ( "#cart-list li:last-child" ).append(ship_data);
 
     var product_name = document.createElement("h6");
     product_name.innerHTML = listaArticulos[i];
     product_name.classList.add('my-0');
-    document.getElementById("product-name").appendChild(product_name);
+    $ ( "#cart-list li:last-child div" ).append(product_name);
 
     var product_description = document.createElement("small");
     product_description.innerHTML = "Descripcion corta";
     product_description.classList.add('text-muted');
-    document.getElementById("product-name").appendChild(product_description);
+    $ ( "#cart-list li:last-child div" ).append(product_description);
 
     var product_price = document.createElement("span");
     product_price.innerHTML = "$"+listaPrecio[i];
     product_price.classList.add('text-muted');
-    document.getElementById("product-price").appendChild(product_price);
+    $ ( "#cart-list li:last-child" ).append(product_price);
 }}
 
 
 
+
+$ (document) 
