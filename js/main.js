@@ -9,20 +9,16 @@ function mostrarProductos(listado) {
     for (const objeto of listado) {
         $("#contenidoGenerado").append(
 
-
-    `<div class="card" style="width: 18rem;">
-        <img src="${objeto.imagen}" class="card-img-top" alt="${objeto.nombre}">
-        <div class="card-body">
-            <h5 class="card-title">${objeto.nombre}</h5>
-            <p class="card-text">$${objeto.precio}</p>
-            <button id="${objeto.id}" type="button" class="btn btn-primary btn-sm btn-add">Agregar al carrito</button>
-        </div>
-    </div>`
-
+`<div class="card-body">
+    <h5 class="card-title">${objeto.nombre}</h5>
+    <p class="card-text">${objeto.data}</p>
+    <button id="${objeto.id}" type="button" class="btn btn-outline-primary btn-add col-5">Agregar al carrito por $${objeto.precio}</button>
+</div>
+<div class="card-footer text-muted"> </div>`
         );
     }
     
-}
+} 
 
 mostrarProductos(DATOSAPP);
 
@@ -54,6 +50,9 @@ $(".btn-add").click(function (e){
         `<li class="list-group-item d-flex justify-content-between">
             <span>Total (ARS)</span>
             <strong>$${total}</strong>
+        </li>
+        <li id="finalize-box" class="list-group-item d-flex justify-content-center">
+            <button id="finalize" type="button" class="btn btn-outline-success">Finalizá tu compra</button>
         </li>`);
 
     $("#count").append(artTotal);});
@@ -62,7 +61,6 @@ $(".btn-add").click(function (e){
     $(".btn-delete").click(function (e) { 
         $("#productos").toggle()
     }); /* Pendiente de configurar para eliminar producto de carrito */
-
 
 
 /*NAVBAR BUSQUEDA */
@@ -77,5 +75,7 @@ $("#busqueda").click(function (e) {
 $("#limpiar").click(function (e) {
     mostrarProductos(DATOSAPP);
 });
+
+
 
 
