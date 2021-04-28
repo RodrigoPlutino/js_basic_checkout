@@ -1,5 +1,4 @@
 
-
 /* GENERAR PRODUCTOS EN DOM */
 
 function mostrarProductos(listado) {
@@ -25,7 +24,7 @@ mostrarProductos(DATOSAPP);
 /* AÑADIR + MOSTRAR EN CARRITO + SLIDE DOWN */
 $(".btn-add").click(function (e){ 
     let elementMatch = DATOSAPP.find(function(element){return element.id == e.target.id});
-    SELECCIONADOS.push(elementMatch);
+    SELECCIONADOS.push(new Producto (elementMatch));
 
 
     let total = 0; /* Monto carrito arranca en 0 */
